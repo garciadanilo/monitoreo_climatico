@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  station_sensor_id: 
+  medida: 1.5
+  fecha_hora_dispositivo: 2016-06-18 16:40:12
+
+two:
+  station_sensor_id: 
+  medida: 1.5
+  fecha_hora_dispositivo: 2016-06-18 16:40:12
