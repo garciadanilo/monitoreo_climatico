@@ -1,0 +1,10 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"Sensor" [shape=Mrecord, label="{Sensor|id :INTEGER\lnombre :varchar\ldescripcion :text\ldeleted :boolean\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Station" [shape=Mrecord, label="{Station|id :INTEGER\lnombre :varchar\ldescripcion :text\ldeleted :boolean\lenabled :boolean\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"StationSensor" [shape=Mrecord, label="{StationSensor|id :INTEGER\lstation_id :integer\lsensor_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"StationSensorMeasurement" [shape=Mrecord, label="{StationSensorMeasurement|id :INTEGER\lstation_sensor_id :integer\lmedida :float\lfecha_hora_dispositivo :datetime\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Station" -> "StationSensor" [arrowtail=odot, arrowhead=crow, dir=both color="#3ADD7A"]
+	"Station" -> "Sensor" [arrowtail=crow, arrowhead=crow, dir=both color="#63AEB8"]
+	"StationSensor" -> "StationSensorMeasurement" [arrowtail=odot, arrowhead=crow, dir=both color="#C61FB1"]
+}

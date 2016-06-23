@@ -1,0 +1,27 @@
+<div class="fixed">
+  <nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Monitoreo Climático</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Opciones</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="has-dropdown <%= page == 'password' ? 'active' : '' %>">
+        <a><%= 'Usuario de Ejemplo' %></a>
+        <ul class="dropdown">
+          <li <%= page == 'password' ? "class=active" : '' %>><%= link_to 'Cambiar Contraseña', '#' %></li>
+          <li><%= link_to 'Cerrar Sesión', '#', method: :delete %></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="left">
+      <li <%= page == 'root' ? "class=active" : '' %>><%= link_to 'Inicio', '#'%></li>
+  	  <li <%= page == 'stations' ? "class=active" : '' %>><%= link_to 'Estaciones', :stations %></li>
+    </ul>
+  </section>
+</nav>
+</div>
