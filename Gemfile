@@ -25,7 +25,6 @@ group :development do
   gem 'spring'
   gem 'annotate'
   gem 'railroady'
-  gem 'spring'
 end
 
 group :production do
@@ -38,8 +37,8 @@ end
 gem 'rails', '4.2.6'
 gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-rails'
-gem 'foundation-rails'
-#gem 'foundation-rails', '~> 5.3.1.0'
+#gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.3.1.0'
 gem 'oj'
 gem 'bcrypt-ruby'
 gem 'jquery-rails'
