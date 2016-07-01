@@ -1,6 +1,5 @@
 /*
- * require_tree .
  *= require_self
- *= require font-awesome
- *= require responsive-tables
+ *= require font-awesome.min
+ *= require bootstrap.min
  */

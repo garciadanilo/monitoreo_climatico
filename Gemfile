@@ -36,7 +36,7 @@ end
 #Other gems used in the app
 gem 'rails', '4.2.6'
 gem 'jbuilder', '~> 2.0'
-gem 'font-awesome-rails'
+#gem 'font-awesome-rails'
 #gem 'foundation-rails'
 #gem 'foundation-rails', '~> 5.3.1.0'
 gem 'oj'
