@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @station.nombre %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @station.descripcion %>
-</p>
-
-<p>
-  <strong>Deleted:</strong>
-  <%= @station.deleted %>
-</p>
-
-<p>
-  <strong>Enabled:</strong>
-  <%= @station.enabled %>
-</p>
-
-<%= link_to 'Edit', edit_station_path(@station) %> |
-<%= link_to 'Back', stations_path %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'jquery-ui.min', :media => 'all' %>
+  <%= stylesheet_link_tag 'stations', :media => 'all' %>
+  <%= javascript_include_tag 'jquery-ui.min' %>
+  <%= javascript_include_tag 'jquery.validate' %>
+  <%= javascript_include_tag 'additional-methods' %>
+  <%= javascript_include_tag 'stations' %>
+<% end %>
+<%=render 'shared/admin_menu', page: 'stations'%>
+<div id="container">
+  <div class="col-md-4" id="info">
+		<div class="row">
+      <p>
+        <strong>Nombre:</strong>
+        <%= @station.nombre %>
+      </p>
+      <p>
+        <strong>Descripcion:</strong>
+        <%= @station.descripcion %>
+      </p>
+    </div>
+  </div>
+</div>

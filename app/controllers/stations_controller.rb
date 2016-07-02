@@ -1,5 +1,5 @@
 class StationsController < ApplicationController
-  before_action :set_station, only: [:show, :edit, :update, :destroy]
+  before_action :set_station, only: [:show, :edit, :update, :destroy, :active]
 
   # GET /stations
   # GET /stations.json
@@ -59,6 +59,21 @@ class StationsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to stations_url, notice: 'Station was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def active
+    status = params[:status]
+    real_status = (status == 'true' ? true : false)
+    @station.enabled = real_status
+
+
+    respond_to do |format|
+      if @station.save
+        format.json{head :no_content, status: :ok}
+      else
+        format.json{head :no_content, status: :unprocessable_entity}
+      end
     end
   end
 

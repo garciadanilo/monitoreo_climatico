@@ -1,6 +1,22 @@
-<h1>Editing Station</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @station %> |
-<%= link_to 'Back', stations_path %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'stations', :media => 'all' %>
+  <%= stylesheet_link_tag 'jquery-ui.min', :media => 'all' %>
+  <%= javascript_include_tag 'jquery-ui.min' %>
+  <%= javascript_include_tag 'jquery.validate' %>
+  <%= javascript_include_tag 'additional-methods' %>
+  <%= javascript_include_tag 'stations' %>
+<% end %>
+<%=render 'shared/admin_menu', page: 'stations'%>
+<div id="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h1>Editar Estación</h1>
+    </div>
+  </div>
+  <%= form_for(@station) do |f| %>
+    <%= render 'form', f: f%>
+    <div class="actions">
+      <%= f.submit 'Editar'%>
+    </div>
+  <%end%>
+</div>

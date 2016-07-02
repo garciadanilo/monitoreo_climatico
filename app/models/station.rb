@@ -5,4 +5,13 @@ class Station < ActiveRecord::Base
 
   #Validaciones
   validates :nombre, presence: true
+
+  #Callbacks
+  before_create :before_create_callback
+
+  private
+  def before_create_callback
+    self.deleted = false
+    self.enabled = true
+  end
 end

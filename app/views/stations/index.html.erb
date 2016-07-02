@@ -5,45 +5,12 @@
   <%= javascript_include_tag 'additional-methods' %>
   <%= javascript_include_tag 'stations' %>
 <% end %>
-<div class="top-bar">
-  <div class="top-bar-title">
-    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-      <button class="menu-icon dark" type="button" data-toggle></button>
-    </span>
-    <strong>Site Title</strong>
-  </div>
-  <div id="responsive-menu">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li>
-          <a href="#">One</a>
-          <ul class="menu vertical">
-            <li><a href="#">One</a></li>
-            <li><a href="#">Two</a></li>
-            <li><a href="#">Three</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
-      </ul>
-    </div>
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li><input type="search" placeholder="Search"></li>
-        <li><button type="button" class="button">Search</button></li>
-      </ul>
-    </div>
-  </div>
-</div>
 <%=render 'shared/admin_menu', page: 'stations'%>
-<div class="row margint">
-	<h2>Estaciones</h2>
-	<div class="small-12 large-2 columns">
-		<ul class="button-group">
-		  <li><%=link_to "<i class='fa fa-bus fa-2x'></i></br>Agregar".html_safe,new_station_path, class: 'button' %></li>
-		  <li><%=link_to "<i class='fa fa-refresh fa-2x'></i></br>Actualizar".html_safe,stations_path(page: @page), class: 'button alert' %></li>
-    </ul>
-	</div>
+<div id="container">
+  <h2>Estaciones</h2>
+	<%=link_to "<i class='fa fa-plus-circle fa-2x'></i></br>Agregar".html_safe,new_station_path, class: 'btn btn-lg btn-primary' %>
+  <%=link_to "<i class='fa fa-refresh fa-2x'></i></br>Actualizar".html_safe,stations_path(page: @page), class: 'btn btn-lg btn-info' %>
+
 	<div class="small-12 large-10 columns">
 		<div class="row">
 	    <%=form_tag('#', method: :get) do%>
@@ -66,15 +33,5 @@
 			</div>
 		<% end %>
 		<%= render 'stations'%>
-	</div>
-
-	<div id="delete" class="reveal-modal tiny" data-reveal>
-		<p class="text-center">¿Esta seguro de seguir con la operación?</p>
-		<div class="row">
-		  <div class="small-6 small-centered columns">
-		   	<a href="#" id="continue" class="button">Continuar</a>
-		  </div>
-		</div>
-		<a class="close-reveal-modal">&#215;</a>
 	</div>
 </div>
