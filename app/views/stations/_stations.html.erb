@@ -1,26 +1,24 @@
-<div class="row">
-  <div class="col-md-6">
-    <table class="table">
-      <thead>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
         <tr>
-          <th>Nombre</th>
-          <th>Mostrar</th>
-          <th>Editar</th>
-          <th>Activa</th>
-          <th>Borrado</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Mostrar</th>
+          <th class="text-center">Editar</th>
+          <th class="text-center">Activa</th>
+          <th class="text-center">Borrado</th>
         </tr>
       </thead>
       <tbody>
         <%@stations.each do |station|%>
           <tr>
-            <td><%=station.nombre%></td>
-            <td class="text-center"><%= link_to "<i class='fa fa-eye fa-2x'></i>".html_safe, station_path(station)%></td>
-            <td class="text-center"><%= link_to "<i class='fa fa-pencil-square-o fa-2x'></i>".html_safe, edit_station_path(station) %></td>
+            <td class="text-center"><%=station.nombre%></td>
+            <td class="text-center"><%= link_to "<i class='fa fa-eye fa-2x hvr-grow'></i>".html_safe, station_path(station)%></td>
+            <td class="text-center"><%= link_to "<i class='fa fa-pencil-square-o fa-2x hvr-grow'></i>".html_safe, edit_station_path(station) %></td>
             <td class="text-center"><%= check_box_tag 'station_active', station.id, station.enabled, class: 'checkbox_active'%></td>
             <td class="text-center"><%= check_box_tag 'station_status', station.id, station.deleted, class: 'checkbox_deleted'%></td>
           </tr>
         <%end%>
       </tbody>
-    </table>
-  </div>
+  </table>
 </div>

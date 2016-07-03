@@ -7,16 +7,14 @@
   <%= javascript_include_tag 'stations' %>
 <% end %>
 <%=render 'shared/admin_menu', page: 'stations'%>
-<div id="container">
-  <div class="row">
-    <div class="col-md-4">
-      <h1>Editar Estación</h1>
-    </div>
+<div id="container" class="container">
+  <h1>Editar Estación</h1>
+  <div class="col-md-3">
+    <%= form_for(@station) do |f| %>
+      <%= render 'form', f: f%>
+      <div class="actions">
+        <%= f.submit 'Editar', class: "btn btn-info"%>
+      </div>
+    <%end%>
   </div>
-  <%= form_for(@station) do |f| %>
-    <%= render 'form', f: f%>
-    <div class="actions">
-      <%= f.submit 'Editar'%>
-    </div>
-  <%end%>
 </div>

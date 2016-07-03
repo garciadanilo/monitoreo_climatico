@@ -2,4 +2,26 @@
  *= require_self
  *= require font-awesome.min
  *= require bootstrap.min
+ *= require hover-min
  */
+.separatenav{
+	height:2px;
+	background-color:#5bc0de;
+	margin-top: 50px;
+}
+
+.btn{
+	margin-bottom: 10px!important;
+}
+
+.botones{
+	width: 87px!important;
+}
+
+.navbar{
+	border: none!important;
+}
+
+.navbar-inverse .navbar-nav>.active>a{
+	background-color: #5bc0de!important;
+}

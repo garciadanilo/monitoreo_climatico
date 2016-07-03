@@ -6,20 +6,21 @@
   <%= javascript_include_tag 'stations' %>
 <% end %>
 <%=render 'shared/admin_menu', page: 'stations'%>
-<div id="container">
+<div id="container" class="container">
   <h2>Estaciones</h2>
-	<%=link_to "<i class='fa fa-plus-circle fa-2x'></i></br>Agregar".html_safe,new_station_path, class: 'btn btn-lg btn-primary' %>
-  <%=link_to "<i class='fa fa-refresh fa-2x'></i></br>Actualizar".html_safe,stations_path(page: @page), class: 'btn btn-lg btn-info' %>
-
-	<div class="small-12 large-10 columns">
+	<div class="col-md-2 col-xs-12 text-center">	
+		<%=link_to "<i class='fa fa-plus-circle fa-2x'></i></br>Agregar".html_safe,new_station_path, class: 'btn btn-primary botones' %>
+		<%=link_to "<i class='fa fa-refresh fa-2x'></i></br>Actualizar".html_safe,stations_path(page: @page), class: 'btn btn-info botones' %>
+	</div>
+	<div class="col-md-10 col-xs-12">
 		<div class="row">
 	    <%=form_tag('#', method: :get) do%>
-		    <div class="large-8 columns">
+		    <div class="col-md-8">
 		      <div class="row collapse">
-	      		<div class="small-10 columns">
+	      		<div class="col-xs-10">
 		          <%=text_field_tag(:search_hint, '', placeholder: 'Buscar')%>
 		        </div>
-		        <div class="small-2 columns">
+		        <div class="col-xs-2">
 		        	<%=submit_tag 'Buscar', class: 'button postfix'%>
 		        </div>
 		      </div>
