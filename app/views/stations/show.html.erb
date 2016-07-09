@@ -7,9 +7,8 @@
   <%= javascript_include_tag 'stations' %>
 <% end %>
 <%=render 'shared/admin_menu', page: 'stations'%>
-<div id="container">
+<div id="container" class="container">
   <div class="col-md-4" id="info">
-		<div class="row">
       <p>
         <strong>Nombre:</strong>
         <%= @station.nombre %>
@@ -18,6 +17,5 @@
         <strong>Descripcion:</strong>
         <%= @station.descripcion %>
       </p>
-    </div>
   </div>
 </div>
