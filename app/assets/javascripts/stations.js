@@ -15,9 +15,13 @@ $(document).ready(function(){
   $('.checkbox_deleted').change(function() {
     var id = $(this).val();
     if($(this).is(":checked")) {
-      console.log('Esta chequeado '+id);
+     $.get("http://localhost:3000/stations/"+id+"/destroy/true.json", function( data ){
+         console.log(data);
+     });
     }else{
-      console.log('No Esta chequeado '+id);
+      $.get("http://localhost:3000/stations/"+id+"/destroy/false.json", function( data ){
+         console.log(data);
+        });
     }
-  });
+});
 });

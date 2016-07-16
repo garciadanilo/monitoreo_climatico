@@ -55,7 +55,11 @@ class StationsController < ApplicationController
   # DELETE /stations/1
   # DELETE /stations/1.json
   def destroy
-    @station.destroy
+    status = params[:status]
+    real_status = (status == 'true' ? true : false)
+    @station.destroy = real_status
+
+
     respond_to do |format|
       format.html { redirect_to stations_url, notice: 'Station was successfully destroyed.' }
       format.json { head :no_content }
